@@ -123,7 +123,6 @@ export async function sendReview({ id, review, rating }) {
   if (error) throw new Error(error.message);
 
   const mId = data.mId;
-  console.log("mId:", mId);
 
   const { data: nReviews, error: nReviewsError } = await supabase
     .from("bookings")
@@ -132,8 +131,6 @@ export async function sendReview({ id, review, rating }) {
     .eq("status", "past");
 
   if (nReviewsError) throw new Error(nReviewsError.message);
-  console.log("Number of reviews:", nReviews.length);
-  console.log(nReviews);
 
   const validRatings = nReviews.filter((r) => typeof r.rating === "number");
   const total = validRatings.reduce((acc, r) => acc + r.rating, 0);

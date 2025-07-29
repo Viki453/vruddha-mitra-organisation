@@ -17,7 +17,6 @@ export async function getVruddhas({ tFilter, tSort, tPage }) {
   if (error) {
     console.error(error.message);
   }
-  console.log(vruddhas);
   return { vruddhas, count };
 }
 
@@ -100,8 +99,6 @@ export async function editVruddha({ newVruddha, id }) {
     .eq("id", id);
 
   if (error) throw new Error(error.message);
-
-  console.log(data);
 
   if (hasImagePath) return data;
 

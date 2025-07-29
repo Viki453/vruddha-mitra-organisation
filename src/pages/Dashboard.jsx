@@ -1,4 +1,4 @@
-import DashboardWindow from "../features/Dashboard/DashboardWindow";
+import DashboardWindow from "../features/dashboard/DashboardWindow";
 
 function Dashboard() {
   return (
